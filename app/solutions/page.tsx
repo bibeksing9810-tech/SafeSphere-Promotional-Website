@@ -1,0 +1,5 @@
+import Link from 'next/link';
+import Layout from '@/components/Layout';
+import { FinalCTA, SectionHead } from '@/components/Section';
+import { solutions } from '@/lib/data';
+export default function Solutions(){return <Layout><main id="main-content" tabIndex={-1}><section className="inner-hero"><div className="container"><div className="eyebrow">Solutions</div><h1>Designed around the people responsible for safer work.</h1><p>Explore how the proposed SafeSphere experience maps to safety, learning, operations and frontline teams.</p></div></section><section className="section"><div className="container"><SectionHead eyebrow="Who it is for" title="One platform concept. Different operational perspectives."/><div className="subpage-grid">{solutions.map(s=><article className="subpage-card" key={s.slug}><div className="mono" style={{fontSize:9,color:'#7da4ab'}}>AUDIENCE</div><h3>{s.name}</h3><p>{s.desc}</p><Link className="btn btn-secondary" href={`/solutions/${s.slug}`} style={{marginTop:18}}>Explore →</Link></article>)}</div></div></section><FinalCTA/></main></Layout>}

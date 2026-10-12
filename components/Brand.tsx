@@ -1,0 +1,1 @@
+export default function Brand(){return <img className="brand-art" src="/safesphere-logo.png" width="1672" height="941" alt="SafeSphere — Safer people, safer tomorrow"/>;}

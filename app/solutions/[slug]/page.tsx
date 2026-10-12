@@ -1,0 +1,7 @@
+import { notFound } from 'next/navigation';
+import Link from 'next/link';
+import Layout from '@/components/Layout';
+import { FinalCTA } from '@/components/Section';
+import { solutions } from '@/lib/data';
+export function generateStaticParams(){return solutions.map(s=>({slug:s.slug}));}
+export default async function SolutionDetail({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const s=solutions.find(x=>x.slug===slug);if(!s)return notFound();return <Layout><main id="main-content" tabIndex={-1}><section className="inner-hero"><div className="container"><div className="eyebrow">Solution / {s.name}</div><h1>{s.name}</h1><p>{s.desc}</p></div></section><section className="section"><div className="container"><div className="detail-layout"><div className="detail-copy"><div className="eyebrow">Designed around the role</div><h2>Useful from the perspective of the team that owns the outcome.</h2><p>The proposed SafeSphere platform can be framed differently for each audience while retaining one common training loop: assign, enter, interact, decide and measure.</p><div style={{marginTop:24}}><Link className="btn btn-primary" href="/contact">Request a Demo ↗</Link></div></div><div className="detail-side"><div className="eyebrow">Potential focus</div><div className="detail-list">{['Interactive scenarios','Structured decisions','Immediate feedback','Completion and performance','Trainer visibility','Reinforcement opportunities'].map(x=><div className="detail-row" key={x}>{x}</div>)}</div></div></div></div></section><FinalCTA/></main></Layout>}

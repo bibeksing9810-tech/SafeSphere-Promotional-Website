@@ -1,0 +1,14 @@
+SafeSphere promotional website — fixed release, 9 October 2026
+
+1. Extract the complete ZIP.
+2. Install Node.js 22 if needed.
+3. Open a terminal in this folder.
+4. Run: npm ci
+5. Run: npm run dev
+6. Open the local URL printed in the terminal.
+
+The out folder contains the prebuilt site. Do not open its HTML by double-clicking; serve it using the command above. To rebuild after editing: npm run build
+
+Includes editable source, original logo, prebuilt site, package lock and A6 alignment notes. Dependencies are installed by npm ci, so internet is needed for initial setup. Login/contact are demonstrations only.
+
+This release includes the navigation hook fix.

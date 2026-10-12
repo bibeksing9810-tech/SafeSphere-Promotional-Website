@@ -1,0 +1,5 @@
+import Link from 'next/link';
+import Layout from '@/components/Layout';
+import { FinalCTA, SectionHead } from '@/components/Section';
+import { modules } from '@/lib/data';
+export default function Training(){return <Layout><main id="main-content" tabIndex={-1}><section className="inner-hero"><div className="container"><div className="eyebrow">Training modules</div><h1>Explore the proposed training library.</h1><p>A modular training concept designed to support different safety topics through interactive scenarios, decisions and feedback.</p></div></section><section className="section"><div className="container"><SectionHead eyebrow="Module library" title="From hazard recognition to structured reasoning."/><div className="module-grid">{modules.map((m,i)=><article className={`module-card ${i===0?'featured':''}`} key={m.slug}>{m.tag && <span className="module-tag">{m.tag}</span>}<h3>{m.name}</h3><p>{m.desc}</p><Link className="link" href={`/training/${m.slug}`}>Explore module →</Link></article>)}</div></div></section><FinalCTA/></main></Layout>}
